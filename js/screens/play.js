@@ -6,6 +6,7 @@ game.PlayScreen = me.ScreenObject.extend({
 		// reset the score
 		game.data.score = 0;
                 me.levelDirector.loadLevel("level01");
+                this.resetPlayer(0, 420);
                 var player = me.pool.pull("player", 0, 420, {});
                 me.game.world.addChild(player, 5);
                 var gamemanager = me.pool.pull("GameManager", 0, 0, {});
@@ -30,5 +31,11 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.input.unbindKey(me.input.KEY.A, "attack");
                 me.input.unbindKey(me.input.KEY.LEFT, "left");
                 me.input.unbindKey(me.input.KEY.SPACE, "jump");
-	}
+                me.game.world.removeChild(game.data.player, 5);
+	},
+        
+        resetPlayer: function(x, y){
+             game.data.player = me.pool.pull("player", x, y, {});
+             me.game.world.addChild(game.data.player, 5);
+        }
 });
