@@ -10,6 +10,8 @@ game.PlayerEntity = me.Entity.extend({
                return(new me.Rect(0, 0, 64, 64)).toPolygon();
                }
         }]);
+    this.type = "PlayerEntity";
+    this.health = 20;
     this.body.setVelocity(5, 20);
     this.facing = "right";
     this.now = new Date().getTime();
@@ -66,8 +68,12 @@ game.PlayerEntity = me.Entity.extend({
       return true;
     
    },
+   loseHealth: function(damage){
+       this.health = this.health - damage;
+       console.log(this.health);
+   },
    collideHandler: function(response){
-       if(response.b.type==='EnemyBaseEntity'){
+       if(response.b.type==='EnemyBase'){
            var ydif = this.pos.y - response.b.pos.y;
            var xdif = this.pos.x - response.b.pos.x;
            
@@ -134,7 +140,7 @@ game.PlayerBaseEntity = me.Entity.extend({
    },
     onCollision: function(){
          
-     },
+     }
      
      
 });
@@ -156,7 +162,7 @@ game.EnemyBaseEntity = me.Entity.extend({
         this.alwaysUpdate = true;
         this.body.onCollision = this.onCollision.bind(this);
         
-        this.type = "EnemyBaseEntity";
+        this.type = "EnemyBase";
          this.renderable.addAnimation("idle", [0]);
         this.renderable.addAnimation("broken", [1]);
         this.renderable.setCurrentAnimation("idle");
@@ -224,13 +230,29 @@ game.EnemyBaseEntity = me.Entity.extend({
             this.attacking=true;
             //this.lastAttacking=this.now;
             this.body.vel.x = 0;
+            //keeps moving the creep to the right to maintain its position
             this.pos.x = this.pos.x + 1;
+            //checks that it has been at least 1 second since this creep hits at base
             if((this.now-this.lastHit >= 1000)){
                 this.lastHit = this.now;
                 response.b.loseHealth(1);
             }
-        }
+                }else if (response.b.type==='PlayerEntity'){
+            var xdif = this.pos.x - response.b.pos.x;
+            this.attacking = true;
+           // this.lastAttacking = this.now;
+            this.body.vel.x = 0;
+            if(xdif>0){           
+            this.pos.x = this.pos.x + 1;
+}
+        
+            if((this.now-this.lastHit >= 1000) && xdif>0){
+                this.lastHit = this.now;
+               response.b.loseHealth(1);
+         }
      }
+}
+           
 });
 
 game.GameManager = Object.extend({
