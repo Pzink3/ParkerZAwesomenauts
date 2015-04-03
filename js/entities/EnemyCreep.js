@@ -30,7 +30,7 @@ game.EnemyCreep = me.Entity.extend({
     update: function(delta){
         console.log(this.health);
         if(this.health <= 0){
-            me.game.world.removeChild(game.data.player);
+            me.game.world.removeChild(this);
         }
       this.now = new Date().getTime();
       this.body.vel.x -=  this.body.accel.x * me.timer.tick;
@@ -52,7 +52,7 @@ game.EnemyCreep = me.Entity.extend({
                 this.lastHit = this.now;
                 response.b.loseHealth(game.data.enemyCreepAttack);
             }
-                }else if (response.b.type==='PlayerEntity'){
+                }else if (response.b.type==='player'){
             var xdif = this.pos.x - response.b.pos.x;
             this.attacking = true;
            // this.lastAttacking = this.now;
