@@ -39,9 +39,23 @@ game.SpendExp = me.ScreenObject.extend({
                             console.log("ERROR: NOT ENOUGH EXPERIENCE");
                         }
                     }else if(action === "F2"){
-                        
+                        if(game.data.exp2 >= exp1cost){
+                            game.data.exp1 += 1;
+                            game.data.exp2 -= exp1cost;
+                            me.state.change(me.state.PLAY);
+                             
+                        }else{
+                            console.log("ERROR: NOT ENOUGH EXPERIENCE");
+                        }
                     }else if(action === "F3"){
-                        
+                        if(game.data.exp3 >= exp1cost){
+                            game.data.exp3 += 1;
+                            game.data.exp3 -= exp1cost;
+                            me.state.change(me.state.PLAY);
+                             
+                        }else{
+                            console.log("ERROR: NOT ENOUGH EXPERIENCE");
+                        }
                     }else if(action === "F4"){
                         
                     }else if(action === "F5"){
