@@ -22,6 +22,7 @@ var game = {
                 creepMoveSpeed: 5,
                 gameTimerManager: "",
                 heroDeathManager: "",
+                experienceManager: "",
                 player: "",
                 exp: 0,
                 gold: 0,
@@ -29,7 +30,7 @@ var game = {
                 exp2: 0,
                 exp3: 0,
                 exp4: 0,
-                win: "",
+                win: ""
 	},
 	
        
