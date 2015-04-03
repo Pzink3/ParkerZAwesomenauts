@@ -126,7 +126,7 @@ game.PlayerEntity = me.Entity.extend({
               // this.pos.x = this.pos.x +1;
            }
            if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= game.data.playerAttackTimer){
-               console.log("tower Hit");
+               // console.log("tower Hit");
                this.lastHit = this.now;
                response.b.loseHealth();
            }
