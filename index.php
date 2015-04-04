@@ -15,7 +15,20 @@
 	<body>
 		<!-- Canvas placeholder -->
 		<div id="screen"></div>
-
+                <form id="input" method="post">
+                    <div class="field">
+                        <label for="username">USERNAME</label>
+                        <input type="text" name="username" id='username' autocomplete="off">
+                    </div>
+                    
+                     <div class="password">
+                        <label for="password">PASSWORD</label>
+                        <input type="text" name="password" id='password'>
+                     </div>
+                    <button type='button' id='register'>REGISTER</button>
+                    <button type='button' id='load'>LOAD</button>
+                    <button type='button' id='mainmenu'>MAIN MENU</button>
+                </form>
 		<!-- melonJS Library -->
 		<!-- build:js js/app.min.js -->
 		<script type="text/javascript" src="lib/melonJS-1.1.0-min.js"></script>
