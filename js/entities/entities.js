@@ -152,7 +152,7 @@ game.PlayerEntity = me.Entity.extend({
              this.lastHit = this.now;
              if(response.b.health <= game.data.playerAttack){
                  game.data.gold += 1;
-                 console.log("Current gold: " + game.data.gold);
+                 console.log("Current account: " + "$" + game.data.gold + ".00");
              }
              response.b.loseHealth(game.data.playerAttack);
          }

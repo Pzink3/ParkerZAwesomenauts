@@ -4,15 +4,19 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/PlayerBaseEntity.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/entities.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/title.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/spendExp.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/ExperienceManager.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/game.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/EnemyCreep.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/play.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/index.php</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/EnemyBaseEntity.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/resources.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/GameManager.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/HeroDeathManager.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/entities.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/title.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/index.php</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/GameTimerManager.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/resources.js</file>
         </group>
     </open-files>
 </project-private>

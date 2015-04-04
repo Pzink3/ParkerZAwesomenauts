@@ -40,6 +40,10 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.input.unbindKey(me.input.KEY.RIGHT, "right");
                 me.input.unbindKey(me.input.KEY.A, "attack");
                 me.input.unbindKey(me.input.KEY.LEFT, "left");
+                me.input.unbindKey(me.input.KEY.B, "buy");
+                me.input.unbindKey(me.input.KEY.Q, "skill1");
+                me.input.unbindKey(me.input.KEY.W, "skill2");
+                me.input.unbindKey(me.input.KEY.E, "skill3");
                 me.input.unbindKey(me.input.KEY.SPACE, "jump");
                 me.game.world.removeChild(game.data.player, 5);
 	},
