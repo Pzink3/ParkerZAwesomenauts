@@ -13,7 +13,7 @@ game.SpendExp = me.ScreenObject.extend({
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
                         this._super(me.Renderable, 'init', [10, 10, 300, 50]);
-                        this.font = new me.Font("Aharoni", 25, "white");
+                        this.font = new me.Font("Century Gothic", 25, "white");
                    
                     },
                     
@@ -49,7 +49,7 @@ game.SpendExp = me.ScreenObject.extend({
                         }
                     }else if(action === "F3"){
                         if(game.data.exp3 >= exp1cost){
-                            game.data.exp1 += 3;
+                            game.data.exp3 += 3;
                             game.data.exp3 -= exp1cost;
                             me.state.change(me.state.PLAY);
                              
@@ -58,7 +58,7 @@ game.SpendExp = me.ScreenObject.extend({
                         }
                     }else if(action === "F4"){
                           if(game.data.exp4 >= exp1cost){
-                            game.data.exp1 += 4;
+                            game.data.exp4 += 4;
                             game.data.exp3 -= exp1cost;
                             me.state.change(me.state.PLAY);
                              

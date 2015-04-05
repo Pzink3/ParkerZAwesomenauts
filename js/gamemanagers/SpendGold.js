@@ -47,19 +47,19 @@ game.SpendGold = Object.extend({
    game.data.buytext = new (me.Renderable.extend({
                     init: function(){
                         this._super(me.Renderable, 'init', [game.data.pausePos.x, game.data.pausePos.y, 300, 50]);
-                        this.font = new me.Font("Aharoni", 25, "white");
+                        this.font = new me.Font("Century Gothic", 25, "white");
                         this.updateWhenPaused = true;
                         this.alwaysUpdate = true;
                     },
                     
                     draw: function(renderer){
                         this.font.draw(renderer.getContext(), "PRESS F1 - F4 TO BUY, AND B TO EXIT. CURRENT ACCOUNT: " + "$" + game.data.gold + ".00", this.pos.x, this.pos.y);
-                        this.font.draw(renderer.getContext(), "Skill 1: Increase Damage. Current Level: " + game.data.skill1 + " Price: " + "$" + ((game.data.exp1+1) * 10) + ".00", this.pos.x, this.pos.y + 40);
-                        this.font.draw(renderer.getContext(), "Skill 2: Turbo Speed! Current Level: " + game.data.skill2 + " Price: " + "$" + ((game.data.skill2+1)*10) + ".00", this.pos.x, this.pos.y + 80);
-                        this.font.draw(renderer.getContext(), "Skill 3: Increase Health. Current Level: " + game.data.skill3 + " Price: " + "$" + ((game.data.skill3+1)*10) + ".00", this.pos.x, this.pos.y + 120);
-                        this.font.draw(renderer.getContext(), "Q Ability: Speed Burst! Current Level: " + game.data.ability1 + " Price: " + "$" + ((game.data.ability1+1)*10) + ".00", this.pos.x, this.pos.y + 160);
-                        this.font.draw(renderer.getContext(), "W Ability: Eat Your Creep For Health! Current Level: " + game.data.ability2 + " Price: " + "$" + ((game.data.ability2+1)*10) + ".00", this.pos.x, this.pos.y + 200);
-                        this.font.draw(renderer.getContext(), "E Ability: Throw Your Spear! Current Level: " + game.data.ability3 + " Price: " + "$" + ((game.data.ability3+1)*10) + ".00", this.pos.x, this.pos.y + 240);
+                        this.font.draw(renderer.getContext(), "Skill 1: Increase Damage. Current Level: " + game.data.skill1.toString() + " Price: " + "$" + ((game.data.skill1+1) * 10) + ".00", this.pos.x, this.pos.y + 40);
+                        this.font.draw(renderer.getContext(), "Skill 2: Turbo Speed! Current Level: " + game.data.skill2.toString() + " Price: " + "$" + ((game.data.skill2+1)*10) + ".00", this.pos.x, this.pos.y + 80);
+                        this.font.draw(renderer.getContext(), "Skill 3: Increase Health. Current Level: " + game.data.skill3.toString() + " Price: " + "$" + ((game.data.skill3+1)*10) + ".00", this.pos.x, this.pos.y + 120);
+                        this.font.draw(renderer.getContext(), "Q Ability: Speed Burst! Current Level: " + game.data.ability1.toString() + " Price: " + "$" + ((game.data.ability1+1)*10) + ".00", this.pos.x, this.pos.y + 160);
+                        this.font.draw(renderer.getContext(), "W Ability: Eat Your Creep For Health! Current Level: " + game.data.ability2.toString() + " Price: " + "$" + ((game.data.ability2+1)*10) + ".00", this.pos.x, this.pos.y + 200);
+                        this.font.draw(renderer.getContext(), "E Ability: Throw Your Spear! Current Level: " + game.data.ability3.toString() + " Price: " + "$" + ((game.data.ability3+1)*10) + ".00", this.pos.x, this.pos.y + 240);
                         
                        
                         

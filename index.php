@@ -15,7 +15,7 @@
 	<body>
 		<!-- Canvas placeholder -->
 		<div id="screen"></div>
-                <form id="input" method="post">
+<!--                <form id="input" method="post">
                     <div class="field">
                         <label for="username">USERNAME</label>
                         <input type="text" name="username" id='username' autocomplete="off">
@@ -28,7 +28,7 @@
                     <button type='button' id='register'>REGISTER</button>
                     <button type='button' id='load'>LOAD</button>
                     <button type='button' id='mainmenu'>MAIN MENU</button>
-                </form>
+                </form>-->
 		<!-- melonJS Library -->
 		<!-- build:js js/app.min.js -->
 		<script type="text/javascript" src="lib/melonJS-1.1.0-min.js"></script>
@@ -52,10 +52,10 @@
 
 		<script type="text/javascript" src="js/screens/title.js"></script>
 		<script type="text/javascript" src="js/screens/play.js"></script>
-                <script type="text/javascript" src="js/screens/spendExp.js"></script>
                 <script type="text/javascript" src="js/screens/newProfile.js"></script>
                 <script type="text/javascript" src="js/screens/loadProfile.js"></script>
-		<!-- /build -->
+                <script type="text/javascript" src="js/screens/spendExp.js"></script>
+
 		<!-- Bootstrap & Mobile optimization tricks -->
 		<script type="text/javascript">
 			window.onReady(function onReady() {

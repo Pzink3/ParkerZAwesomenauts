@@ -69,7 +69,7 @@ game.PlayerEntity = me.Entity.extend({
          }else{
           this.body.vel.x = 0;
       }
-      if(me.input.isKeyPressed("jump")&& !this.jumping && !this.falling){
+      if(me.input.isKeyPressed("jump")&& !this.body.jumping && !this.body.falling){
             this.jumping = true;
             this.body.vel.y -= this.body.accel.y * me.timer.tick;
         this.renderable.setAnimationFrame();
@@ -102,6 +102,16 @@ game.PlayerEntity = me.Entity.extend({
             return true;
         }  
         return false;
+   },
+   
+   checkKeyPressesAndMove: function(){
+       if(me.input.isKeyPressed("right")){
+           this.moveRight();
+           }else if(me.input.isKeyPressed("left")){
+               this.moveLeft();
+       }else{
+          this.body.vel.x = 0;  
+       }
    },
    loseHealth: function(damage){
        this.health = this.health - damage;
