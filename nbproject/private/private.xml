@@ -5,18 +5,22 @@
         <group>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/PlayerBaseEntity.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/spendExp.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/ExperienceManager.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/loadProfile.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/game.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/EnemyCreep.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/play.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/EnemyBaseEntity.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/GameManager.js</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/HeroDeathManager.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/gamemanagers/SpendGold.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/newProfile.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/gamemanagers/GameManager.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/data/img/miniMap2.png</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/entities.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/screens/title.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/gamemanagers/HeroDeathManager.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/index.php</file>
-            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/entities/GameTimerManager.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/gamemanagers/GameTimerManager.js</file>
             <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/js/resources.js</file>
+            <file>file:/C:/xampp/htdocs/ParkerZAwesomenauts/data/img/miniMap.png</file>
         </group>
     </open-files>
 </project-private>

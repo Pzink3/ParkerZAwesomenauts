@@ -31,6 +31,7 @@ game.PlayerEntity = me.Entity.extend({
     setPlayerTimers: function(){
     this.now = new Date().getTime();
     this.lastHit = this.now;  
+    this.lastSpear = this.now;
     this.lastAttack = new Date().getTime();
     },
     
@@ -53,7 +54,9 @@ game.PlayerEntity = me.Entity.extend({
     update: function(delta){
         this.now = new Date().getTime();
         this.dead = this.checkIfDead();
-       
+        this.checkAbilityKeys();
+        this.checkKeyPressesAndMove();
+        this.setAnimation();
         if(me.input.isKeyPressed("right")){
            // adds to the position of my x by adding the velocity defined above in
           // setVelocity() and multiplying it by me.timer.tick.
@@ -63,16 +66,12 @@ game.PlayerEntity = me.Entity.extend({
         this.body.vel.x += this.body.accel.x * me.timer.tick;
         this.flipX(true);
         }else if(me.input.isKeyPressed("left")){
-             this.facing = "left";
-             this.body.vel.x -=this.body.accel.x * me.timer.tick;
-             this.flipX(false);
+             this.moveLeft();
          }else{
           this.body.vel.x = 0;
       }
       if(me.input.isKeyPressed("jump")&& !this.body.jumping && !this.body.falling){
-            this.jumping = true;
-            this.body.vel.y -= this.body.accel.y * me.timer.tick;
-        this.renderable.setAnimationFrame();
+          this.jump();
         }
       
       if(me.input.isKeyPressed("attack")){
@@ -112,6 +111,50 @@ game.PlayerEntity = me.Entity.extend({
        }else{
           this.body.vel.x = 0;  
        }
+        if(me.input.isKeyPressed("jump")&& !this.body.jumping && !this.body.falling){
+            this.jump();
+        }
+        this.attacking = me.input.isKeyPressed("attack");
+   },
+   
+   moveRight: function(){
+       this.facing = "right";
+       this.body.vel.x += this.body.accel.x * me.timer.tick;
+       this.flipX(true);
+   },
+   moveLeft: function(){
+       this.facing = "left";
+       this.body.vel.x -=this.body.accel.x * me.timer.tick;
+       this.flipX(false);
+   },
+   
+   jump: function(){
+       this.jumping = true;
+        this.body.vel.y -= this.body.accel.y * me.timer.tick;
+        this.renderable.setAnimationFrame();  
+   },
+   checkAbilityKeys: function(){
+       if(me.input.isKeyPressed("skill1")){
+           this.speedBurst();
+       }else if(me.input.isKeyPressed("skill2")){
+           
+       }
+   else if(me.input.isKeyPressed("skill3")){
+       throwSpear();
+   }
+
+   },
+   
+   throwSpear: function(){
+       if(this.lastSpear >= game.data.spearTimer && game.data.ability3 >= 0){
+       this.lastSpear = this.now;
+       var spear = me.pool.pull("spear", this.pos.x, this.pos.y, {});
+       me.game.world.addChild(spear, 10);  
+       }
+      
+   },
+   setAnimation: function(){
+       
    },
    loseHealth: function(damage){
        this.health = this.health - damage;

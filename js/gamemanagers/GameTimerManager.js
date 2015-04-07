@@ -20,7 +20,7 @@ game.GameTimerManager = Object.extend({
     goldTimerCheck: function(){
           if(Math.round(this.now/1000)%20 ===0 && (this.now - this.lastCreep >= 1000)){
             game.data.gold += (game.data.exp1);
-            console.log("Current money: " + "$" + game.data.gold + ".00");
+            console.log("Current account: " + "$" + game.data.gold + ".00");
         }
     },
     creepTimerCheck: function(){

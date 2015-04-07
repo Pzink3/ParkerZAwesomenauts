@@ -47,7 +47,7 @@ game.SpendGold = Object.extend({
    game.data.buytext = new (me.Renderable.extend({
                     init: function(){
                         this._super(me.Renderable, 'init', [game.data.pausePos.x, game.data.pausePos.y, 300, 50]);
-                        this.font = new me.Font("Century Gothic", 25, "white");
+                        this.font = new me.Font("Tw Cen MT", 25, "white");
                         this.updateWhenPaused = true;
                         this.alwaysUpdate = true;
                     },
@@ -79,6 +79,9 @@ game.SpendGold = Object.extend({
        me.input.unbindKey(me.input.KEY.F4, "F4", true);
        me.input.unbindKey(me.input.KEY.F5, "F5", true);
        me.input.unbindKey(me.input.KEY.F6, "F6", true);
+       me.input.unbindKey(me.input.KEY.Q, "Q", true);
+       me.input.unbindKey(me.input.KEY.W, "W", true);
+       me.input.unbindKey(me.input.KEY.E, "E", true);
        me.game.world.removeChild(game.data.buytext, 35);
     },
     
@@ -86,26 +89,40 @@ game.SpendGold = Object.extend({
         if(me.input.isKeyPressed("F1")){
             if(this.checkCost(1)){
                 this.makePurchase(1);
+            }else{
+                console.log("ERROR: NOT ENOUGH MONEY");
             }
         }else if(me.input.isKeyPressed("F2")){
             if(this.checkCost(2)){
                 this.makePurchase(2);
+                }else{
+                console.log("ERROR: NOT ENOUGH MONEY");
+            
             }
         }else if(me.input.isKeyPressed("F3")){
             if(this.checkCost(3)){
                 this.makePurchase(3);
+                }else{
+                console.log("ERROR: NOT ENOUGH MONEY");
+            
             }
-        }else if(me.input.isKeyPressed("F4")){
+        }else if(me.input.isKeyPressed("Q")){
             if(this.checkCost(4)){
                 this.makePurchase(4);
+                }else{
+                console.log("ERROR: NOT ENOUGH MONEY");
             }
-        }else if(me.input.isKeyPressed("F5")){
+        }else if(me.input.isKeyPressed("W")){
             if(this.checkCost(5)){
                 this.makePurchase(5);
+                }else{
+                console.log("ERROR: NOT ENOUGH MONEY");
             }
-        }else if(me.input.isKeyPressed("F6")){
+        }else if(me.input.isKeyPressed("E")){
             if(this.checkCost(6)){
                 this.makePurchase(6);
+                }else{
+                console.log("ERROR: NOT ENOUGH MONEY");
             }
          }
         },
