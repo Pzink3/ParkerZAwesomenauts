@@ -106,19 +106,19 @@ game.SpendGold = Object.extend({
                 console.log("ERROR: NOT ENOUGH MONEY");
             
             }
-        }else if(me.input.isKeyPressed("Q")){
+        }else if(me.input.isKeyPressed("F4")){
             if(this.checkCost(4)){
                 this.makePurchase(4);
                 }else{
                 console.log("ERROR: NOT ENOUGH MONEY");
             }
-        }else if(me.input.isKeyPressed("W")){
+        }else if(me.input.isKeyPressed("F5")){
             if(this.checkCost(5)){
                 this.makePurchase(5);
                 }else{
                 console.log("ERROR: NOT ENOUGH MONEY");
             }
-        }else if(me.input.isKeyPressed("E")){
+        }else if(me.input.isKeyPressed("F6")){
             if(this.checkCost(6)){
                 this.makePurchase(6);
                 }else{

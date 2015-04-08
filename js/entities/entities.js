@@ -17,10 +17,10 @@ game.PlayerEntity = me.Entity.extend({
    
     setSuper: function(x, y){
          this._super(me.Entity, 'init', [x, y, {
-            image: "player",
+               image: "player",
                width: 64,
                height: 64,
-              spritewidth: "64",
+               spritewidth: "64",
                spriteheight: "64",
                getShape: function(){
                return(new me.Rect(0, 0, 64, 64)).toPolygon();
@@ -44,6 +44,7 @@ game.PlayerEntity = me.Entity.extend({
     setFlags: function(){
     this.facing = "right"; 
     this.dead = false; 
+    this.attacking = false;
     },
     
     addAnimation: function(){
@@ -74,20 +75,7 @@ game.PlayerEntity = me.Entity.extend({
           this.jump();
         }
       
-      if(me.input.isKeyPressed("attack")){
-         if(!this.renderable.isCurrentAnimation("attack")){
-            // console.log(!this.renderable.isCurrentAnimation("attack"));
-              this.renderable.setCurrentAnimation("attack", "idle");
-              this.renderable.setAnimationFrame();
-           }
-       }
-       else if(this.body.vel.x !== 0 && !this.renderable.isCurrentAnimation("attack")) {
-       if(!this.renderable.isCurrentAnimation("walk")) {
-          this.renderable.setCurrentAnimation("walk");
-             }
-              }else{
-       this.renderable.setCurrentAnimation("idle");
-         }
+      
         
       me.collision.check(this, true, this.collideHandler.bind(this), true);
       this.body.update(delta);
@@ -135,26 +123,40 @@ game.PlayerEntity = me.Entity.extend({
    },
    checkAbilityKeys: function(){
        if(me.input.isKeyPressed("skill1")){
-           this.speedBurst();
+        //   this.speedBurst();
        }else if(me.input.isKeyPressed("skill2")){
-           
+           //this.eatCreep();
        }
    else if(me.input.isKeyPressed("skill3")){
-       throwSpear();
+       console.log("skill3");
+       this.throwSpear();
    }
 
    },
    
    throwSpear: function(){
-       if(this.lastSpear >= game.data.spearTimer && game.data.ability3 >= 0){
+       if((this.now-this.lastSpear) >= game.data.spearTimer*1000 && game.data.ability3 > 0){
        this.lastSpear = this.now;
-       var spear = me.pool.pull("spear", this.pos.x, this.pos.y, {});
+       var spear = me.pool.pull("spear", this.pos.x, this.pos.y, {}, this.facing);
        me.game.world.addChild(spear, 10);  
        }
-      
+   
    },
    setAnimation: function(){
-       
+       if(this.attacking){
+         if(!this.renderable.isCurrentAnimation("attack")){
+            // console.log(!this.renderable.isCurrentAnimation("attack"));
+              this.renderable.setCurrentAnimation("attack", "idle");
+              this.renderable.setAnimationFrame();
+           }
+       }
+       else if(this.body.vel.x !== 0 && !this.renderable.isCurrentAnimation("attack")) {
+       if(!this.renderable.isCurrentAnimation("walk")) {
+          this.renderable.setCurrentAnimation("walk");
+             }
+              }else{
+       this.renderable.setCurrentAnimation("idle");
+         }
    },
    loseHealth: function(damage){
        this.health = this.health - damage;
